@@ -18,8 +18,10 @@ Welcome to **FileNest** – a simple yet powerful file organizer written in Java
 
 🛠️ *Organized Folders Example* –
 <p align="center">
-  <img src="https://github.com/Shashwat-19/FileNest/raw/main/screenshots/folder-structure.png" width="60%"/>
-  <img src="https://github.com/Shashwat-19/FileNest/raw/main/screenshots/terminal-output.png" width="60%"/>
+  <img src="https://github.com/Shashwat-19/FileNest/raw/main/images/Initial.png" width="45%"/>
+  <img src="https://github.com/Shashwat-19/FileNest/raw/main/images/Code.png" width="45%"/>
+  <img src="https://github.com/Shashwat-19/FileNest/raw/main/images/AllIn.png" width="45%"/>
+  <img src="https://github.com/Shashwat-19/FileNest/raw/main/images/Organized.png" width="45%"/>
 </p>
 
 ---
