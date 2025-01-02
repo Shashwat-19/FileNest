@@ -1,0 +1,22 @@
+# Ignore compiled class files
+*.class
+
+# Ignore IDE project files
+.idea/
+.vscode/
+*.iml
+
+# Ignore log files
+*.log
+
+# Ignore temporary system files (macOS, Windows, Linux)
+.DS_Store
+Thumbs.db
+
+# Ignore build directory (if any)
+build/
+
+# Ignore any specific folders or files you don't want to track
+# (e.g., sensitive configuration files)
+config/
+*.properties
