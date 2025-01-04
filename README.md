@@ -58,8 +58,8 @@ FileNest v1.0 is now live! 🎉
 
 ## 🔒 License
 
-Licensed under the MIT License. See the [LICENSE](LICENSE) file.
-
+Copyright (C) 2023-2024 Shashwat<br><br>
+This project is Licensed under the MIT License.See the [LICENSE](LICENSE) file for details.
 ---
 
 ## 📩 Contact
