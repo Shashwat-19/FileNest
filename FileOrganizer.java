@@ -1,5 +1,4 @@
 package files;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -10,6 +9,7 @@ import java.util.Map;
 
 public class FileOrganizer {
     private static final Map<String, String> FILE_TYPES = new HashMap<>();
+    private static final String TRASH_FOLDER = "Trash";
 
     static {
         FILE_TYPES.put(".jpg", "Images");
@@ -64,22 +64,60 @@ public class FileOrganizer {
         for (String folder : FILE_TYPES.values()) {
             new File(directoryPath + File.separator + folder).mkdirs();
         }
+        new File(directoryPath + File.separator + TRASH_FOLDER).mkdirs();
 
-        for (File file : directory.listFiles()) {
+        File[] files = directory.listFiles();
+        if (files == null || files.length == 0) {
+            System.out.println("No files to organize.");
+            return;
+        }
+
+        int totalFiles = files.length;
+        int filesMoved = 0;
+
+        for (File file : files) {
             if (file.isFile()) {
                 String fileName = file.getName();
-                String fileExtension = fileName.substring(fileName.lastIndexOf("."));
+                int lastDotIndex = fileName.lastIndexOf(".");
+                String fileExtension = (lastDotIndex != -1) ? fileName.substring(lastDotIndex) : "";
                 String targetFolder = FILE_TYPES.getOrDefault(fileExtension, "Others");
                 File targetDir = new File(directoryPath + File.separator + targetFolder);
                 
                 try {
                     Files.move(file.toPath(), Path.of(targetDir.getPath(), fileName), StandardCopyOption.REPLACE_EXISTING);
-                    System.out.println("Moved " + fileName + " to " + targetFolder);
+                    filesMoved++;
+                    printProgressBar(filesMoved, totalFiles);
                 } catch (IOException e) {
-                    System.out.println("Failed to move " + fileName + ": " + e.getMessage());
+                    System.out.println("Failed to move " + fileName + ". Moving to Trash.");
+                    moveToTrash(file, directoryPath);
                 }
             }
         }
+        System.out.println("\nFile organization complete.");
+    }
+
+    private static void moveToTrash(File file, String directoryPath) {
+        File trashDir = new File(directoryPath + File.separator + TRASH_FOLDER);
+        try {
+            Files.move(file.toPath(), Path.of(trashDir.getPath(), file.getName()), StandardCopyOption.REPLACE_EXISTING);
+            System.out.println(file.getName() + " moved to Trash.");
+        } catch (IOException e) {
+            System.out.println("Failed to move to Trash: " + e.getMessage());
+        }
+    }
+
+    private static void printProgressBar(int filesMoved, int totalFiles) {
+        int progress = (int) ((double) filesMoved / totalFiles * 50);
+        StringBuilder bar = new StringBuilder("[");
+        for (int i = 0; i < 50; i++) {
+            if (i < progress) {
+                bar.append("#");
+            } else {
+                bar.append(" ");
+            }
+        }
+        bar.append("]");
+        System.out.print("\r" + bar + " " + filesMoved + "/" + totalFiles + " files moved");
     }
 
     public static void main(String[] args) {
@@ -94,4 +132,3 @@ public class FileOrganizer {
         }
     }
 }
-
