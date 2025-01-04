@@ -4,6 +4,11 @@ Welcome to **FileNest** – a simple file organizer written in Java! This projec
 
 ---
 
+## 📦 Latest Release: [v1.0](https://github.com/Shashwat-19/FileNest/releases/tag/v1.0)
+FileNest v1.0 is now live! 🎉
+
+---
+
 ## ✨ Features
 
 - **Auto File Sorting** – Automatically moves files into categorized folders (e.g., Images, Documents, Videos, Code).
