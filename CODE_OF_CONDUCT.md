@@ -2,7 +2,7 @@
 
 ## Our Pledge
 
-We as members, contributors, and leaders pledge to make participation in the FileNest project a harassment-free experience for everyone. We are dedicated to fostering an open, welcoming, diverse, inclusive, and healthy environment for collaboration.
+We as members, contributors, and leaders pledge to make participation in the FileNest project a harassment-free experience for everyone. We are dedicated to fostering an open, welcoming, diverse, inclusive, and healthy environment for collaboration..
 
 We pledge to act and interact in ways that contribute to an open, inclusive, and positive community for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation.
 
