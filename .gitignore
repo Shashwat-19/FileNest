@@ -20,3 +20,4 @@ build/
 # (e.g., sensitive configuration files)
 config/
 *.properties
+output/*.dmg
