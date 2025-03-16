@@ -1,80 +1,87 @@
 # FileNest 📂
 
-Welcome to **FileNest** – a simple file organizer written in Java! This project helps keep your directories tidy by automatically sorting files into categorized folders based on their file types, now with a user-friendly graphical interface and standalone application support.
+FileNest is a **multi-platform file organizer** that helps you sort and manage your files effortlessly. With support for **Windows, macOS, and Linux**, FileNest intelligently categorizes files into designated folders for better organization and accessibility.
 
 ---
 
-## 📦 Latest Release: [v2.0](https://github.com/Shashwat-19/FileNest/releases/tag/v2.0)
+## 📦 Latest Release: [v3.0](https://github.com/Shashwat-19/FileNest/releases/tag/v3.0)
 FileNest v2.0 is now live! 🎉  
 This version introduces a **Graphical User Interface (GUI)** and **standalone application formats** (.jar and .dmg) for an improved user experience.
 
 ---
 
 ## ✨ Features
-
-- **Auto File Sorting** – Automatically moves files into categorized folders (e.g., Images, Documents, Videos, Code).
-- **Customizable Folders** – Define folder types by file extension.
-- **Progress Indicator** – Track the sorting process in real-time.
-- **Trash Bin Integration** – Send unwanted files directly to the trash bin.
-- **Cross-Platform** – Works on macOS, Windows, and Linux.
-- **GUI Interface** – A graphical interface for easier navigation and interaction with the program.
-- **Drag and Drop Support** – Drag files or directories into the app for automatic sorting.
-- **Standalone Application** – Available as a `.jar` file for all platforms and a `.dmg` file for macOS users.
+- **Multi-Platform Support** — Works seamlessly on **Windows, macOS, and Linux**.
+- **Graphical User Interface (GUI)** — Simple and intuitive interface for easy navigation.
+- **Smart File Categorization** — Automatically sorts files into folders based on type (Images, Documents, Videos, etc.).
+- **Drag-and-Drop Functionality** — Effortlessly move files into the application for quick sorting.
+- **Optimized Performance** — Handles large directories efficiently without lag.
+- **Trash Management** — Moves unnecessary files to the trash safely on all supported operating systems.
 
 ---
 
-## 🚀 Installation & Usage
+## 🛠️ Installation Guide
 
-### 🔹 For macOS (DMG File)
-1. **Download the latest `.dmg` file** from the [Releases](https://github.com/Shashwat-19/FileNest/releases) page.
-2. **Open the `.dmg` file** and drag the FileNest app into the Applications folder.
-3. **Run FileNest** from the Applications folder.
+### **Windows Users**
+1. **Clone the Repository:**
+   ```sh
+   git clone https://github.com/Shashwat-19/FileNest.git
+   cd FileNest
+   ```
+2. **Compile the Java Program:**
+   ```sh
+   javac FileOrganizer.java
+   ```
+3. **Run the Program:**
+   ```sh
+   java FileOrganizer
+   ```
 
-### 🔹 For Windows & Linux (JAR File)
-1. **Download the latest `.jar` file** from the [Releases](https://github.com/Shashwat-19/FileNest/releases) page.
-2. **Ensure Java is installed** (Java 8 or later).
-3. **Run the application** using the command:
-    ```bash
-    java -jar FileNest.jar
-    ```
-4. The GUI will open, allowing you to organize your files effortlessly.
+## 💻 MacOS Users
+🔽 **Download FileNest v1.0 for macOS**: [Download Here](https://drive.google.com/file/d/1P0y9zwp77MtLMelvmlNlCOIy1N5pDnYV/view?usp=drive_link)
+
+After downloading, simply install the `.dmg` file and launch the application.
+
+### **Linux Users**
+1. **Clone the Repository:**
+   ```sh
+   git clone https://github.com/Shashwat-19/FileNest.git
+   cd FileNest
+   ```
+2. **Compile and Run:**
+   ```sh
+   javac FileOrganizer.java
+   java FileOrganizer
+   ```
 
 ---
 
-## 🛢️ How It Works
-
-1. **FileNest scans** the directory for files using the GUI or manual directory input.
-2. **Files are categorized** by extension (e.g., .jpg, .pdf, .mp4, .java).
-3. New folders are created if needed.
-4. **Files are moved** to corresponding folders.
-5. Unwanted files can be sent to the **trash bin**.
-6. A **progress indicator** shows sorting status.
-7. With the GUI, you can easily drag and drop files for sorting.
+## 🛠️ Bug Fixes & Improvements in v3.0
+- Fixed UI alignment issues for better user experience.
+- Optimized file sorting logic for faster performance.
+- Improved error handling to prevent crashes with locked files.
 
 ---
 
 ## 📚 Tech Stack
-
-- **Language** – Java ☕️
-- **File Handling** – Java IO & NIO
-- **GUI** – JavaFX for the graphical interface
-- **Event Handling** – Java Event Listeners for button and drag-and-drop functionality
+- **Language**: Java ☕️
+- **File Handling**: Java IO & NIO
+- **GUI Framework**: Swing (for a lightweight and responsive interface)
+- **Event Handling**: Java Event Listeners
 
 ---
 
 ## 🔒 License
-
-This project is Licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License**. See the [LICENSE](https://github.com/Shashwat-19/FileNest/blob/main/LICENSE) file for details.
 
 ---
 
 ## 📩 Contact
-
 **Shashwat**  
 BCA (Hons), Christ University, Bangalore  
-[GitHub](https://github.com/Shashwat-19) | [LinkedIn](https://www.linkedin.com/in/shashwatk1956/) | [Email me](mailto:shashwat1956@gmail.com)
+[GitHub](https://github.com/Shashwat-19) | [LinkedIn](https://www.linkedin.com/in/shashwatk1956/) | [Email Me](shashwat1956@gmail.com)
 
 ---
 
-**FileNest v2.0 Released!** 🎉
+**Enjoy organizing your files with FileNest v3.0!** 🎉
 
