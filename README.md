@@ -38,7 +38,7 @@ This version introduces a **Graphical User Interface (GUI)** and **standalone ap
    ```
 
 ## 💻 MacOS Users
-🔽 **Download FileNest v1.0 for macOS**: [Download Here](https://drive.google.com/file/d/1P0y9zwp77MtLMelvmlNlCOIy1N5pDnYV/view?usp=drive_link)
+🔽 **Download FileNest v1.0 for macOS**: [Download Here](https://drive.google.com/file/d/1y9rRd5FubZtByTSrCxKXA7bJNY6uwwoj/view?usp=sharing)
 
 After downloading, simply install the `.dmg` file and launch the application.
 
