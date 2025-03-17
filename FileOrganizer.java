@@ -9,47 +9,51 @@ import java.io.IOException;
 import java.nio.file.*;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Stack;
 import java.util.Locale;
 
+@SuppressWarnings("unused")
 public class FileOrganizer {
     private static final Map<String, String> FILE_TYPES = new HashMap<>();
-    private static final String TRASH_FOLDER = getTrashDirectory();
+    private static final String TRASH_FOLDER;
+    private final Stack<Map<Path, Path>> moveHistory = new Stack<>(); // Stack to track moved files
 
     static {
+        TRASH_FOLDER = getTrashDirectory();
         FILE_TYPES.put(".jpg", "Images");
         FILE_TYPES.put(".jpeg", "Images");
         FILE_TYPES.put(".png", "Images");
         FILE_TYPES.put(".gif", "Images");
         FILE_TYPES.put(".bmp", "Images");
         FILE_TYPES.put(".svg", "Images");
-
+        
         FILE_TYPES.put(".pdf", "Documents");
         FILE_TYPES.put(".docx", "Documents");
         FILE_TYPES.put(".doc", "Documents");
         FILE_TYPES.put(".txt", "Documents");
         FILE_TYPES.put(".xlsx", "Documents");
         FILE_TYPES.put(".pptx", "Documents");
-
+        
         FILE_TYPES.put(".mp3", "Audio");
         FILE_TYPES.put(".wav", "Audio");
         FILE_TYPES.put(".aac", "Audio");
         FILE_TYPES.put(".flac", "Audio");
-
+        
         FILE_TYPES.put(".mp4", "Videos");
         FILE_TYPES.put(".mov", "Videos");
         FILE_TYPES.put(".avi", "Videos");
         FILE_TYPES.put(".mkv", "Videos");
-
+        
         FILE_TYPES.put(".zip", "Archives");
         FILE_TYPES.put(".rar", "Archives");
         FILE_TYPES.put(".7z", "Archives");
         FILE_TYPES.put(".tar", "Archives");
         FILE_TYPES.put(".gz", "Archives");
-
+        
         FILE_TYPES.put(".dmg", "Programs");
         FILE_TYPES.put(".sh", "Programs");
         FILE_TYPES.put(".deb", "Programs");
-
+        
         FILE_TYPES.put(".py", "Code");
         FILE_TYPES.put(".cpp", "Code");
         FILE_TYPES.put(".html", "Code");
@@ -75,25 +79,18 @@ public class FileOrganizer {
         headerLabel.setForeground(Color.WHITE);
         headerLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         panel.add(headerLabel);
-
         panel.add(Box.createRigidArea(new Dimension(0, 30)));
 
         JPanel buttonPanel = new JPanel(new GridBagLayout());
         buttonPanel.setBackground(Color.DARK_GRAY);
         GridBagConstraints gbc = new GridBagConstraints();
-        gbc.gridx = 0;
-        gbc.gridy = 0;
-        gbc.insets = new Insets(10, 0, 10, 0);
+        gbc.insets = new Insets(10, 5, 10, 5);
 
-        JButton organizeButton = new JButton("Choose Folder");
-        organizeButton.setPreferredSize(new Dimension(200, 50));
-        organizeButton.setBackground(new Color(0, 123, 255));
-        organizeButton.setForeground(Color.BLACK); // Ensures text is black
-        organizeButton.setFocusPainted(false);
-        organizeButton.setFont(new Font("Times New Roman", Font.BOLD, 16));
-        organizeButton.setOpaque(true); // Ensure the background is applied properly
-        organizeButton.setBorderPainted(false); // Optional: Removes border
+        JButton organizeButton = createStyledButton("Choose Folder");
+        JButton undoButton = createStyledButton("Undo Last Action");
+
         buttonPanel.add(organizeButton, gbc);
+        buttonPanel.add(undoButton, gbc);
 
         panel.add(buttonPanel);
         panel.add(Box.createVerticalGlue());
@@ -101,18 +98,26 @@ public class FileOrganizer {
         frame.add(panel, BorderLayout.CENTER);
         frame.setVisible(true);
 
-        organizeButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFileChooser fileChooser = new JFileChooser();
-                fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-                int option = fileChooser.showOpenDialog(null);
-                if (option == JFileChooser.APPROVE_OPTION) {
-                    File selectedDir = fileChooser.getSelectedFile();
-                    organizeFiles(selectedDir.getAbsolutePath());
-                }
+        organizeButton.addActionListener(e -> {
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+            if (fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+                organizeFiles(fileChooser.getSelectedFile().getAbsolutePath());
             }
         });
+
+        undoButton.addActionListener(e -> undoLastAction());
+    }
+
+    private JButton createStyledButton(String text) {
+        JButton button = new JButton(text);
+        button.setPreferredSize(new Dimension(200, 50));
+        button.setBackground(new Color(0, 123, 255));
+        button.setForeground(Color.BLACK);
+        button.setFont(new Font("Times New Roman", Font.BOLD, 16));
+        button.setOpaque(true);
+        button.setBorderPainted(false);
+        return button;
     }
 
     public void organizeFiles(String directoryPath) {
@@ -122,55 +127,49 @@ public class FileOrganizer {
             return;
         }
 
-        for (String folder : FILE_TYPES.values()) {
-            new File(directoryPath + File.separator + folder).mkdirs();
-        }
-
-        File[] files = directory.listFiles();
-        if (files == null || files.length == 0) {
-            JOptionPane.showMessageDialog(null, "No files to organize.");
-            return;
-        }
-
-        for (File file : files) {
+        Map<Path, Path> movedFiles = new HashMap<>();
+        for (File file : directory.listFiles()) {
             if (file.isFile()) {
-                String fileName = file.getName();
-                int lastDotIndex = fileName.lastIndexOf(".");
-                String fileExtension = (lastDotIndex != -1) ? fileName.substring(lastDotIndex) : "";
-                String targetFolder = FILE_TYPES.getOrDefault(fileExtension, "Others");
-                File targetDir = new File(directoryPath + File.separator + targetFolder);
+                String ext = file.getName().replaceAll(".*\\.", ".");
+                String folder = FILE_TYPES.getOrDefault(ext, "Others");
+                File targetDir = new File(directoryPath, folder);
+                targetDir.mkdirs();
+
+                Path source = file.toPath();
+                Path target = targetDir.toPath().resolve(file.getName());
                 try {
-                    Files.move(file.toPath(), Path.of(targetDir.getPath(), fileName), StandardCopyOption.REPLACE_EXISTING);
+                    Files.move(source, target, StandardCopyOption.REPLACE_EXISTING);
+                    movedFiles.put(target, source);
                 } catch (IOException e) {
-                    moveToTrash(file);
+                    e.printStackTrace();
                 }
             }
         }
+        if (!movedFiles.isEmpty()) moveHistory.push(movedFiles);
         JOptionPane.showMessageDialog(null, "File organization complete.");
     }
 
-    private void moveToTrash(File file) {
-        try {
-            Path trashPath = Paths.get(TRASH_FOLDER, file.getName());
-            Files.move(file.toPath(), trashPath, StandardCopyOption.REPLACE_EXISTING);
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Failed to move to Trash: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    private void undoLastAction() {
+        if (moveHistory.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "No actions to undo.");
+            return;
         }
+        Map<Path, Path> lastMove = moveHistory.pop();
+        lastMove.forEach((target, source) -> {
+            try {
+                Files.move(target, source, StandardCopyOption.REPLACE_EXISTING);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        JOptionPane.showMessageDialog(null, "Last action undone.");
     }
 
     private static String getTrashDirectory() {
-        String os = System.getProperty("os.name").toLowerCase(Locale.ROOT);
-        if (os.contains("win")) {
-            return System.getenv("USERPROFILE") + "\\Recycle Bin"; // Windows Recycle Bin (not directly accessible)
-        } else if (os.contains("mac")) {
-            return System.getProperty("user.home") + "/.Trash"; // macOS Trash
-        } else {
-            return System.getProperty("user.home") + "/.local/share/Trash/files"; // Linux Trash
-        }
+        return System.getProperty("user.home") + "/.local/share/Trash/files";
     }
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(FileOrganizer::new);
     }
 }
-
