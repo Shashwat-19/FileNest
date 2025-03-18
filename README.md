@@ -78,14 +78,14 @@ This project is licensed under the **MIT License**. See the [LICENSE](https://gi
 
 ## 📩 Contact  
 ### Shashwat  
-#### Developer | Java Enthusiast | Cloud Learner  
+**Developer | Java Enthusiast | Cloud Learner**  
 
 🔹 **Building Scalable Applications with Java**  
 🔹 **Exploring Cloud, Docker & DevOps**  
 🔹 **Open Source Contributor & Tech Explorer**  
 
 📌 **Find me here:**  
-[🌐 GitHub](https://github.com/Shashwat-19) | [🔗 LinkedIn](https://www.linkedin.com/in/shashwatk1956/) | [✉️ Email Me](mailto:shashwat1956@gmail.com)
+[GitHub](https://github.com/Shashwat-19) | [LinkedIn](https://www.linkedin.com/in/shashwatk1956/) | [Email Me](mailto:shashwat1956@gmail.com)
 
 ---
 
