@@ -72,7 +72,7 @@ After downloading, simply install the `.dmg` file and launch the application.
 ---
 
 ## 🔒 License
-This project is licensed under the **MIT License**. See the [LICENSE](https://github.com/Shashwat-19/FileNest/blob/main/LICENSE) file for details.
+This project is licensed under the **Mozilla Public License Version 2.0**. See the [LICENSE](https://github.com/Shashwat-19/FileNest/blob/main/LICENSE) file for details.
 
 ---
 
