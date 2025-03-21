@@ -22,3 +22,4 @@ config/
 *.properties
 output/*.dmg
 FileOrganizer.app/Contents/runtime/Contents/Home/lib/modules
+FileOrganizer.app/Contents/runtime/Contents/Home/lib/modules
