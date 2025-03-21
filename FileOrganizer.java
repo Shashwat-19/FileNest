@@ -1,6 +1,8 @@
 package files;
 
 import java.awt.*;
+import java.awt.datatransfer.DataFlavor;
+import java.awt.dnd.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
@@ -8,18 +10,16 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.*;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Stack;
-import java.util.Locale;
 
 @SuppressWarnings("unused")
 public class FileOrganizer {
     private static final Map<String, String> FILE_TYPES = new HashMap<>();
-    private static final String TRASH_FOLDER;
-    private final Stack<Map<Path, Path>> moveHistory = new Stack<>(); // Stack to track moved files
+    private final Stack<Map<Path, Path>> moveHistory = new Stack<>();
 
     static {
-        TRASH_FOLDER = getTrashDirectory();
         FILE_TYPES.put(".jpg", "Images");
         FILE_TYPES.put(".jpeg", "Images");
         FILE_TYPES.put(".png", "Images");
@@ -74,8 +74,8 @@ public class FileOrganizer {
         panel.setBackground(Color.DARK_GRAY);
         panel.setBorder(BorderFactory.createEmptyBorder(60, 30, 30, 30));
 
-        JLabel headerLabel = new JLabel("Choose the Folder to Organize", JLabel.CENTER);
-        headerLabel.setFont(new Font("Times New Roman", Font.BOLD, 20));
+        JLabel headerLabel = new JLabel("Drag & Drop a Folder or Choose Manually", JLabel.CENTER);
+        headerLabel.setFont(new Font("Times New Roman", Font.BOLD, 18));
         headerLabel.setForeground(Color.WHITE);
         headerLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         panel.add(headerLabel);
@@ -94,7 +94,6 @@ public class FileOrganizer {
 
         panel.add(buttonPanel);
         panel.add(Box.createVerticalGlue());
-
         frame.add(panel, BorderLayout.CENTER);
         frame.setVisible(true);
 
@@ -107,6 +106,31 @@ public class FileOrganizer {
         });
 
         undoButton.addActionListener(e -> undoLastAction());
+
+        // Drag and Drop Support
+        new DropTarget(panel, new DropTargetListener() {
+            @Override
+            public void dragEnter(DropTargetDragEvent dtde) {}
+            @Override
+            public void dragOver(DropTargetDragEvent dtde) {}
+            @Override
+            public void dropActionChanged(DropTargetDragEvent dtde) {}
+            @Override
+            public void dragExit(DropTargetEvent dte) {}
+            @Override
+            public void drop(DropTargetDropEvent dtde) {
+                try {
+                    dtde.acceptDrop(DnDConstants.ACTION_COPY);
+                    @SuppressWarnings("unchecked")
+                    List<File> droppedFiles = (List<File>) dtde.getTransferable().getTransferData(DataFlavor.javaFileListFlavor);
+                    if (!droppedFiles.isEmpty() && droppedFiles.get(0).isDirectory()) {
+                        organizeFiles(droppedFiles.get(0).getAbsolutePath());
+                    }
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
     }
 
     private JButton createStyledButton(String text) {
@@ -163,10 +187,6 @@ public class FileOrganizer {
             }
         });
         JOptionPane.showMessageDialog(null, "Last action undone.");
-    }
-
-    private static String getTrashDirectory() {
-        return System.getProperty("user.home") + "/.local/share/Trash/files";
     }
 
     public static void main(String[] args) {
