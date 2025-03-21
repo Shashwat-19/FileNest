@@ -21,3 +21,4 @@ build/
 config/
 *.properties
 output/*.dmg
+FileOrganizer.app/Contents/runtime/Contents/Home/lib/modules
