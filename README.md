@@ -4,9 +4,9 @@ FileNest is a **multi-platform file organizer** that helps you sort and manage y
 
 ---
 
-## 📦 Latest Release: [v3.0](https://github.com/Shashwat-19/FileNest/releases/tag/v3.0)
-FileNest v2.0 is now live! 🎉  
-This version introduces a **Graphical User Interface (GUI)** and **standalone application formats** (.jar and .dmg) for an improved user experience.
+## 📦 Latest Release: [v3.1](https://github.com/Shashwat-19/FileNest/releases/tag/v3.1)
+FileNest v3.1 is now live! 🎉  
+This version introduces **Drag-and-Drop Functionality**, making file organization even more intuitive and efficient.
 
 ---
 
@@ -38,7 +38,7 @@ This version introduces a **Graphical User Interface (GUI)** and **standalone ap
    ```
 
 ## 💻 MacOS Users
-🔽 **Download FileNest v1.0 for macOS**: [Download Here](https://drive.google.com/file/d/1y9rRd5FubZtByTSrCxKXA7bJNY6uwwoj/view?usp=sharing)
+🔽 **Download FileNest v3.1 for macOS**: [Download Here](https://drive.google.com/file/d/1vHbroRVE-a43TLrWDpQZQtBOdCw9Zgn0/view?usp=drive_link)
 
 After downloading, simply install the `.dmg` file and launch the application.
 
@@ -56,7 +56,8 @@ After downloading, simply install the `.dmg` file and launch the application.
 
 ---
 
-## 🛠️ Bug Fixes & Improvements in v3.0
+## 🛠️ Bug Fixes & Improvements in v3.1
+- **Added Drag-and-Drop Support** for easier file movement.
 - Fixed UI alignment issues for better user experience.
 - Optimized file sorting logic for faster performance.
 - Improved error handling to prevent crashes with locked files.
@@ -66,7 +67,7 @@ After downloading, simply install the `.dmg` file and launch the application.
 ## 📚 Tech Stack
 - **Language**: Java ☕️
 - **File Handling**: Java IO & NIO
-- **GUI Framework**: Swing (for a lightweight and responsive interface)
+- **GUI Framework**: Swing (Now with Drag & Drop support!)
 - **Event Handling**: Java Event Listeners
 
 ---
@@ -89,5 +90,4 @@ This project is licensed under the **Mozilla Public License Version 2.0**. See t
 
 ---
 
-**Enjoy organizing your files with FileNest v3.0!** 🎉
-
+**Enjoy organizing your files with FileNest v3.1!** 🎉
