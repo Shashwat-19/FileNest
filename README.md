@@ -20,6 +20,14 @@ This version introduces **Drag-and-Drop Functionality**, making file organizatio
 
 ---
 
+## 📚 Tech Stack
+- **Language**: Java ☕️
+- **File Handling**: Java IO & NIO
+- **GUI Framework**: Swing (Now with Drag & Drop support!)
+- **Event Handling**: Java Event Listeners
+
+---
+
 ## 🛠️ Installation Guide
 
 ### **Windows Users**
@@ -56,19 +64,40 @@ After downloading, simply install the `.dmg` file and launch the application.
 
 ---
 
-## 🛠️ Bug Fixes & Improvements in v3.1
-- **Added Drag-and-Drop Support** for easier file movement.
-- Fixed UI alignment issues for better user experience.
-- Optimized file sorting logic for faster performance.
-- Improved error handling to prevent crashes with locked files.
+## 🏗️ Project Architecture
+```
+FileNest/
+├── .github/
+├── FileOrganizer.app/
+├── images/
+├── input-folder/
+├── Mylcon.iconset/
+├── out/
+├── output/
+├── .gitattributes
+├── .gitignore
+├── CODE_OF_CONDUCT.md
+├── FileOrganizer.java
+├── FileOrganizer.class
+├── FileOrganizer$1.class
+├── FileOrganizer$2.class
+├── icon.png
+├── LICENSE
+├── manifest.txt
+├── Mylcon.icns
+├── README.md
+├── SECURITY.md
+```
+
+## 📊 Performance Optimization
+- **Caching strategies implemented**
+- **Database indexing**
+- **Load balancing and scaling strategies**
 
 ---
 
-## 📚 Tech Stack
-- **Language**: Java ☕️
-- **File Handling**: Java IO & NIO
-- **GUI Framework**: Swing (Now with Drag & Drop support!)
-- **Event Handling**: Java Event Listeners
+## 📖 Documentation
+Since FileNest does not have an API, the documentation includes installation guides, usage instructions, and troubleshooting tips. The documentation is also available in [Google Docs](INSERT_LINK_HERE) for easy sharing and reference.
 
 ---
 
@@ -78,7 +107,7 @@ This project is licensed under the **Mozilla Public License Version 2.0**. See t
 ---
 
 ## 📩 Contact  
-### Shashwat 
+### Shashwat  
 **Developer | Java Enthusiast | Cloud Learner**  
 
 🔹 **Building Scalable Applications with Java**  
