@@ -1,5 +1,9 @@
 # FileNest 📂
 
+[![GitHub stars](https://img.shields.io/github/stars/Shashwat-19/FileNest?style=social)](https://github.com/Shashwat-19/FileNest/stargazers)
+[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
+[![Java Version](https://img.shields.io/badge/Java-11%2B-orange)](https://www.java.com)
+
 FileNest is a **multi-platform file organizer** that helps you sort and manage your files effortlessly. With support for **Windows, macOS, and Linux**, FileNest intelligently categorizes files into designated folders for better organization and accessibility.
 
 ---
