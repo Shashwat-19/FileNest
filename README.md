@@ -4,7 +4,8 @@
 [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
 [![Java Version](https://img.shields.io/badge/Java-11%2B-orange)](https://www.java.com)
 
-FileNest is a **multi-platform file organizer** that helps you sort and manage your files effortlessly. With support for **Windows, macOS, and Linux**, FileNest intelligently categorizes files into designated folders for better organization and accessibility.
+## Overview
+FileNest is a robust, multi-platform file management application designed to streamline file organization through intelligent categorization and user-friendly interfaces. Developed using Java, the application addresses the critical challenge of managing digital file systems efficiently across Windows, macOS, and Linux platforms.
 
 ---
 
@@ -31,6 +32,20 @@ This version introduces **Drag-and-Drop Functionality**, making file organizatio
 - **Event Handling**: Java Event Listeners
 
 ---
+
+## System Components
+```
+FileNest/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── FileOrganizer.java
+│   ├── test/
+│   └── resources/
+├── docs/
+├── config/
+└── build/
+```
 
 ## 🛠️ Installation Guide
 
@@ -68,30 +83,7 @@ After downloading, simply install the `.dmg` file and launch the application.
 
 ---
 
-## 🏗️ Project Architecture
-```
-FileNest/
-├── .github/
-├── FileOrganizer.app/
-├── images/
-├── input-folder/
-├── Mylcon.iconset/
-├── out/
-├── output/
-├── .gitattributes
-├── .gitignore
-├── CODE_OF_CONDUCT.md
-├── FileOrganizer.java
-├── FileOrganizer.class
-├── FileOrganizer$1.class
-├── FileOrganizer$2.class
-├── icon.png
-├── LICENSE
-├── manifest.txt
-├── Mylcon.icns
-├── README.md
-├── SECURITY.md
-```
+
 
 ## 📊 Performance Optimization
 - **Caching strategies implemented**
