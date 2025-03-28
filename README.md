@@ -118,8 +118,10 @@ This project is licensed under the **Mozilla Public License Version 2.0**. See t
 🔹 **Exploring Cloud, Docker & DevOps**  
 🔹 **Open Source Contributor & Tech Explorer**  
 
-📌 **Find me here:**  
-[GitHub](https://github.com/Shashwat-19) | [LinkedIn](https://www.linkedin.com/in/shashwatk1956/) | [Email Me](mailto:shashwat1956@gmail.com)
+### 📌 Find me here:
+[<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />](https://github.com/Shashwat-19)
+[<img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/shashwatk1956/)
+[<img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />](mailto:shashwat1956@gmail.com)
 
 ---
 
