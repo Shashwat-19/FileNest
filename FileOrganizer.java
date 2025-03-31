@@ -18,6 +18,11 @@ import java.util.Stack;
 public class FileOrganizer {
     private static final Map<String, String> FILE_TYPES = new HashMap<>();
     private final Stack<Map<Path, Path>> moveHistory = new Stack<>();
+    
+    // Statistics tracking variables
+    private int totalFilesMoved = 0;
+    private final Map<String, Integer> fileTypeCounts = new HashMap<>();
+    private long totalSpaceFreed = 0;
 
     static {
         FILE_TYPES.put(".jpg", "Images");
@@ -150,27 +155,59 @@ public class FileOrganizer {
             JOptionPane.showMessageDialog(null, "Directory does not exist.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-
+    
+        // Reset stats for the new session
+        int filesMoved = 0;
+        long spaceFreed = 0;
+        Map<String, Integer> currentFileTypeCounts = new HashMap<>();
+    
         Map<Path, Path> movedFiles = new HashMap<>();
+    
         for (File file : directory.listFiles()) {
             if (file.isFile()) {
                 String ext = file.getName().replaceAll(".*\\.", ".");
                 String folder = FILE_TYPES.getOrDefault(ext, "Others");
                 File targetDir = new File(directoryPath, folder);
                 targetDir.mkdirs();
-
+    
                 Path source = file.toPath();
                 Path target = targetDir.toPath().resolve(file.getName());
                 try {
+                    long fileSize = file.length();
                     Files.move(source, target, StandardCopyOption.REPLACE_EXISTING);
                     movedFiles.put(target, source);
+    
+                    // Update session stats (not global stats)
+                    filesMoved++;
+                    spaceFreed += fileSize;
+                    currentFileTypeCounts.put(folder, currentFileTypeCounts.getOrDefault(folder, 0) + 1);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
         }
-        if (!movedFiles.isEmpty()) moveHistory.push(movedFiles);
+    
+        if (!movedFiles.isEmpty()) {
+            moveHistory.push(movedFiles);
+        }
+    
+        showStatistics(filesMoved, spaceFreed, currentFileTypeCounts);
         JOptionPane.showMessageDialog(null, "File organization complete.");
+    }
+
+    private void showStatistics(int filesMoved, long spaceFreed, Map<String, Integer> currentFileTypeCounts) {
+        StringBuilder stats = new StringBuilder("<html><b>Statistics Dashboard</b><br>");
+        stats.append("Files Moved: ").append(filesMoved).append("<br>");
+        stats.append("Space Freed: ").append(spaceFreed / 1024).append(" KB<br>");
+        stats.append("<b>File Types Organized:</b><br>");
+        
+        currentFileTypeCounts.forEach((key, value) -> 
+            stats.append(key).append(": ").append(value).append("<br>")
+        );
+    
+        stats.append("</html>");
+    
+        JOptionPane.showMessageDialog(null, new JLabel(stats.toString()), "Statistics", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private void undoLastAction() {
