@@ -9,9 +9,9 @@ FileNest is a robust, multi-platform file management application designed to str
 
 ---
 
-## 📦 Latest Release: [v3.1](https://github.com/Shashwat-19/FileNest/releases/tag/v3.1)
-FileNest v3.1 is now live! 🎉  
-This version introduces **Drag-and-Drop Functionality**, making file organization even more intuitive and efficient.
+## 📦 Latest Release: [v3.1](https://github.com/Shashwat-19/FileNest/releases/tag/v3.2)
+FileNest v3.2 is now live! 🎉  
+This version introduces **Stats-Functionality**, making file organization even more intuitive and efficient.
 
 ---
 
