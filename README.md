@@ -15,13 +15,15 @@ This version introduces **Drag-and-Drop Functionality**, making file organizatio
 
 ---
 
-## ✨ Features
-- **Multi-Platform Support** — Works seamlessly on **Windows, macOS, and Linux**.
-- **Graphical User Interface (GUI)** — Simple and intuitive interface for easy navigation.
-- **Smart File Categorization** — Automatically sorts files into folders based on type (Images, Documents, Videos, etc.).
-- **Drag-and-Drop Functionality** — Effortlessly move files into the application for quick sorting.
-- **Optimized Performance** — Handles large directories efficiently without lag.
-- **Trash Management** — Moves unnecessary files to the trash safely on all supported operating systems.
+## ✨ **Features**  
+- **Multi-Platform Support** — Works seamlessly on **Windows, macOS, and Linux**.  
+- **Graphical User Interface (GUI)** — Simple and intuitive interface for easy navigation.  
+- **Smart File Categorization** — Automatically sorts files into folders based on type (Images, Documents, Videos, etc.).  
+- **Drag-and-Drop Functionality** — Effortlessly move files into the application for quick sorting.  
+- **Optimized Performance** — Handles large directories efficiently without lag.  
+- **Trash Management** — Moves unnecessary files to the trash safely on all supported operating systems.  
+- **Stats Feature** — View detailed statistics on your file system, including total file count, file types, largest files, and more for better file management.
+
 
 ---
 
