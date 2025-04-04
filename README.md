@@ -65,7 +65,7 @@ FileNest/
    ```
 
 ## 💻 MacOS Users
-🔽 **Download FileNest v3.1 for macOS**: [Download Here](https://drive.google.com/file/d/1vHbroRVE-a43TLrWDpQZQtBOdCw9Zgn0/view?usp=drive_link)
+🔽 **Download FileNest v3.1 for macOS**: [Download Here](https://drive.google.com/file/d/1_SnN4VN4LGvKE_X2e0r-tIJZ-UyQ3Dcm/view?usp=drive_link)
 
 After downloading, simply install the `.dmg` file and launch the application.
 
