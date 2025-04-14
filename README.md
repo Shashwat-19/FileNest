@@ -99,6 +99,23 @@ Since FileNest does not have an API, the documentation includes installation gui
 
 ---
 
+## 📝 Developer Blog
+
+Curious about the story behind FileNest or how it was built?  
+I regularly share **development insights**, **Java tips**, and **behind-the-scenes tutorials** on my [Hashnode blog](https://hashnode.com/@Shashwat56).
+
+### 🔍 Blog Highlights *(Coming Soon)*
+
+- *How I Built FileNest – Tackling Cross-Platform File Organization in Java*  
+- *Implementing Drag-and-Drop in Swing UI – Made Easy*  
+- *Building the Stats Feature – Visualizing File System Data*  
+
+📰 **Read the full series and more here:**  
+[![Visit My Blog](https://img.shields.io/badge/Visit%20My%20Blog-2962FF?style=for-the-badge&logo=hashnode&logoColor=white)](https://shashwat-filenest.hashnode.dev/)
+
+Stay tuned for new posts and updates!
+
+
 ## 🔒 License
 This project is licensed under the **Mozilla Public License Version 2.0**. See the [LICENSE](https://github.com/Shashwat-19/FileNest/blob/main/LICENSE) file for details.
 
