@@ -3,6 +3,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/Shashwat-19/FileNest?style=social)](https://github.com/Shashwat-19/FileNest/stargazers)
 [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
 [![Java Version](https://img.shields.io/badge/Java-11%2B-orange)](https://www.java.com)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 
 ## Overview
 FileNest is a robust, multi-platform file management application designed to streamline file organization through intelligent categorization and user-friendly interfaces. Developed using Java, the application addresses the critical challenge of managing digital file systems efficiently across Windows, macOS, and Linux platforms.
