@@ -137,7 +137,7 @@ Stay tuned for new posts and updates!
 
 
 ## 🔒 License
-This project is licensed under the **Mozilla Public License Version 2.0**. See the [LICENSE](https://github.com/Shashwat-19/FileNest/blob/main/LICENSE) file for details.
+This project is licensed under the **Mozilla Public License Version 2.0**. For detailed licensing information, please refer to the [LICENSE](./LICENSE) file included in this repository.
 
 ---
 
