@@ -137,7 +137,7 @@ Stay tuned for new posts and updates!
 
 
 ## 🔒 License
-This project is licensed under the **Mozilla Public License Version 2.0**. For detailed licensing information, please refer to the [LICENSE](./LICENSE) file included in this repository.
+This project is licensed under the **Mozilla Public License Version 2.0**.<br> For detailed licensing information, please refer to the [LICENSE](./LICENSE) file included in this repository.
 
 ---
 
