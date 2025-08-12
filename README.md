@@ -143,17 +143,22 @@ This project is licensed under the **Mozilla Public License Version 2.0**. For d
 
 ## 📩 Contact  
 ### Shashwat  
-**Software Developer | Cloud & DevOps Enthusiast**
+**Python & Java Developer | Cloud & NoSQL Enthusiast**  
 
-**🔹 Java Backend Development**<br>
-**🔹 Cloud Architecture & Containerization**<br>
-**🔹 DevOps & Scalable Systems**
+- **Python & Java Development** – Automation, Backend Systems, APIs, and OOP  
+- **Cloud & NoSQL** – Docker, AWS, MongoDB, Firebase Firestore  
+- **UI/UX Design** – Creating user-focused, scalable, and visually engaging applications  
 
-### 🚀 Open Source | Tech Innovation  
-Passionate about building scalable applications and contributing to transformative tech solutions.
+---
+
+## 🚀 Open Source | Tech Innovation  
+Passionate about creating robust applications and leveraging cloud technologies for high-performance solutions.
+
 
 ### 📌 Find me here:  
 [<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />](https://github.com/Shashwat-19)  [<img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/shashwatk1956/)  [<img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />](mailto:shashwat1956@gmail.com)  [<img src="https://img.shields.io/badge/Hashnode-2962FF?style=for-the-badge&logo=hashnode&logoColor=white" />](https://hashnode.com/@Shashwat56)
+[<img src="https://img.shields.io/badge/HackerRank-15%2B-2EC866?style=for-the-badge&logo=HackerRank&logoColor=white" />](https://www.hackerrank.com/profile/shashwat1956)
 
+Feel free to connect for tech collaborations, open-source contributions, or brainstorming innovative solutions!
 
 **Enjoy organizing your files with FileNest v3.2!** 🎉
