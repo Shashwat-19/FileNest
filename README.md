@@ -1,10 +1,15 @@
-# FileNest 📂
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=32&duration=2800&pause=2000&color=667EEA&background=FFFFFF00&center=true&vCenter=true&width=600&lines=FileNest;Organize+%E2%80%A2+Manage+%E2%80%A2+Nest" alt="FileNest Banner" />
+</div>
+
 
 [![GitHub stars](https://img.shields.io/github/stars/Shashwat-19/FileNest?style=social)](https://github.com/Shashwat-19/FileNest/stargazers)
 [![License](https://img.shields.io/github/license/Shashwat-19/FileNest)](./LICENSE)
 [![GitHub release](https://img.shields.io/github/v/release/Shashwat-19/FileNest)](https://github.com/Shashwat-19/FileNest/releases)
 [![Platform](https://img.shields.io/badge/platform-Windows%20|%20macOS%20|%20Linux-blue)](#)
 [![Build](https://img.shields.io/badge/build-passing-brightgreen)](#)
+
+
 
 
 ## Overview
