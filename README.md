@@ -14,8 +14,14 @@
 [![Open Source](https://img.shields.io/badge/Open%20Source-Yes-green)](#)
 [![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen)](#)
 
-
-
+```
+███████╗██╗██╗     ███████╗███╗   ██╗███████╗███████╗████████╗
+██╔════╝██║██║     ██╔════╝████╗  ██║██╔════╝██╔════╝╚══██╔══╝
+█████╗  ██║██║     █████╗  ██╔██╗ ██║█████╗  ███████╗   ██║   
+██╔══╝  ██║██║     ██╔══╝  ██║╚██╗██║██╔══╝  ╚════██║   ██║   
+██║     ██║███████╗███████╗██║ ╚████║███████╗███████║   ██║   
+╚═╝     ╚═╝╚══════╝╚══════╝╚═╝  ╚═══╝╚══════╝╚══════╝   ╚═╝   
+```
 
 ## Overview
 FileNest is a **community-driven, open-source** file management application designed to streamline file organization through intelligent categorization and user-friendly interfaces. Built with Java and maintained by contributors worldwide, this project addresses the critical challenge of managing digital file systems efficiently across Windows, macOS, and Linux platforms.
