@@ -215,6 +215,7 @@ public class FileOrganizer {
             JOptionPane.showMessageDialog(null, "No actions to undo.");
             return;
         }
+        // movement of the files from the target to the source
         Map<Path, Path> lastMove = moveHistory.pop();
         lastMove.forEach((target, source) -> {
             try {
