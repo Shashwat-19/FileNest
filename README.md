@@ -101,7 +101,27 @@ FileNest/
 ├── SECURITY.md
 └── CODE_OF_CONDUCT.md
 ```
+---
 
+## 🔗 Dependencies
+
+Make sure these are installed before running **FileNest**:
+
+- **Java (JDK 8 or higher)** ☕️  
+  - macOS: `brew install openjdk@17`  
+  - Linux: `sudo apt install openjdk-17-jdk`  
+  - Windows: [Download JDK](https://www.oracle.com/java/technologies/javase-downloads.html)
+
+- **Git** 🌀  
+  - macOS: `brew install git`  
+  - Linux: `sudo apt install git`  
+  - Windows: [Download Git](https://git-scm.com/download/win)
+
+- **Maven (Optional)** ⚙️  
+  - macOS: `brew install maven`  
+  - Linux: `sudo apt install maven`  
+  - Windows: [Download Maven](https://maven.apache.org/download.cgi)
+---
 ## 🛠️ Installation Guide
 
 ### **Windows Users**
