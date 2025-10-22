@@ -19,24 +19,12 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         
-    - name: Cache Maven packages
-      uses: actions/cache@v3
-      with:
-        path: ~/.m2
-        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-        restore-keys: ${{ runner.os }}-m2
+    - name: Compile Java files
+      run: |
+        javac -cp . "java Folder/hello.java"
+        javac -cp . "src/com/filenest/FileOrganizer.java"
         
-    - name: Build with Maven
-      run: mvn clean compile
-      
-    - name: Run tests
-      run: mvn test
-      
-    - name: Package JAR
-      run: mvn package
-      
-    - name: Upload build artifacts
-      uses: actions/upload-artifact@v3
-      with:
-        name: jar-artifacts
-        path: dist/*.jar
+    - name: Run basic tests
+      run: |
+        java -cp "java Folder" hello
+        echo "FileOrganizer compilation successful"

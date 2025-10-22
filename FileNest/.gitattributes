@@ -1,0 +1,26 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Java files
+*.java text
+*.properties text
+*.xml text
+*.txt text
+*.md text
+
+# Binary files
+*.jar binary
+*.class binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.icns binary
+
+# Line ending normalization
+*.java text eol=lf
+*.properties text eol=lf
+*.xml text eol=lf
+*.txt text eol=lf
+*.md text eol=lf
