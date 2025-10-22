@@ -1,4 +1,4 @@
-package files;
+package com.filenest;
 
 import java.awt.*;
 import java.awt.datatransfer.DataFlavor;
