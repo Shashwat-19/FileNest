@@ -71,35 +71,17 @@ This version introduces **Stats-Functionality**, making file organization even m
 
 ## System Components
 ```
-FileNest/
-├── .github/               
-├── .vscode/                 
-├── src/                      
-│   └── com/
-│       └── filenest/
-│           └── FileOrganizer.java
-├── libs/                     
-├── assets/
-│   ├── images/               
-│   └── icons/                 
-│       ├── MyIcon.iconset/
-│       └── MyIcon.icns
-├── input/                   
-│   ├── input-folder/
-│   └── temp-input/
-├── output/                  
-│   ├── out/
-│   └── other generated files
-├── dist/                   
-│   ├── FileNest.jar
-│   ├── FileOrganizer.class
-│   └── manifest.txt
-├── .gitattributes
-├── .gitignore
+FileNest/                   
+├── assets/                         # All icons and images
+├── CODE_OF_CONDUCT.md
 ├── LICENSE
 ├── README.md
-├── SECURITY.md
-└── CODE_OF_CONDUCT.md
+└── SECURITY.md
+├── src/
+│   └── com/filenest/
+│       ├── FileOrganizer.class
+│       └── FileOrganizer.java      # Your main FileOrganizer application
+└── .github/workflows/build.yml     # Updated to use simple Java compilation
 ```
 ---
 
